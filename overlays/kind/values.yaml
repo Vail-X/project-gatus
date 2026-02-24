@@ -243,6 +243,11 @@ networkPolicy:
 # Gatus configuration
 config:
   metrics: true
+  alerting:
+  teams:
+    webhook-url: "https://default67c571b1a73849adbe52041def1cd5.d7.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/bb9894cf8e9d49f39d72f5f94cf64475/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Mu2XyhfK5qi-_V6lmtAvAVV0lI8UdcBFtJTFfk8uf_I"
+    client:
+      insecure: false
   endpoints:
     - name: grafana
       group: rancher-monitoring
@@ -251,6 +256,10 @@ config:
       conditions:
         - "[STATUS] == 200"
         - "[BODY].database == ok"
+      alerts:
+        - type: teams
+          description: "Grafana healthcheck failed"
+          send-on-resolved: true
 
     - name: prometheus
       group: rancher-monitoring
@@ -258,6 +267,10 @@ config:
       interval: 1m
       conditions:
         - "[STATUS] == 200"
+      alerts:
+        - type: teams
+          description: "Prometheus healthcheck failed"
+          send-on-resolved: true
 
     - name: alertmanager
       group: rancher-monitoring
@@ -265,6 +278,10 @@ config:
       interval: 1m
       conditions:
         - "[STATUS] == 200"
+      alerts:
+        - type: teams
+          description: "Alertmanager healthcheck failed"
+          send-on-resolved: true
 
 # Name of an external ConfigMap resource. If set, `config` is ignored.
 externalConfigMap: ""
