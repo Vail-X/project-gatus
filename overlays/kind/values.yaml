@@ -244,10 +244,10 @@ networkPolicy:
 config:
   metrics: true
   alerting:
-  teams:
-    webhook-url: "https://default67c571b1a73849adbe52041def1cd5.d7.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/bb9894cf8e9d49f39d72f5f94cf64475/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Mu2XyhfK5qi-_V6lmtAvAVV0lI8UdcBFtJTFfk8uf_I"
-    client:
-      insecure: false
+    teams:
+      webhook-url: "https://default67c571b1a73849adbe52041def1cd5.d7.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/bb9894cf8e9d49f39d72f5f94cf64475/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Mu2XyhfK5qi-_V6lmtAvAVV0lI8UdcBFtJTFfk8uf_I"
+      client:
+        insecure: false
   endpoints:
     - name: grafana
       group: rancher-monitoring
