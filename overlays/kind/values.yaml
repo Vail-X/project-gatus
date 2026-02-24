@@ -242,6 +242,7 @@ networkPolicy:
 # ref: https://github.com/TwiN/gatus#configuration
 # Gatus configuration
 config:
+  metrics: true
   endpoints:
     - name: grafana
       group: rancher-monitoring
